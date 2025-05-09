@@ -160,10 +160,11 @@ body, html {
 }
 
 .result-image {
-  width: 200px; /* Adjust the size as needed */
-  height: auto;
-  margin: 20px 0;
-  border-radius: 8px; /* Optional: add rounded corners */
+  height: 200px;       /* Set a consistent height */
+  width: auto;         /* Maintain aspect ratio */
+  border-radius: 8px;  /* Rounded corners */
+  object-fit: cover;   /* Ensures nice cropping if needed */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional styling */
 }
 
 .rezultat{
@@ -172,5 +173,18 @@ body, html {
   border: none;
   color: hsl(0, 0%, 100%);
   transition: background-color 0.2s;
+  margin-bottom: 10px;
+  transition: background-color 0.2s;
 }
 
+.result-images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Space between images */
+  margin-top: 20px;
+}
+
+.result .question {
+  margin-bottom: 1px; /* Reduce spacing below heading */
+}

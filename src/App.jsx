@@ -36,7 +36,7 @@ function App() {
 		{ question: "Ce sărbătoare se apropie?", answers: ["♈ Berbec", "♉ Taur", "♊ Gemeni", "♋ Rac","♌ Leu", "♍ Fecioară", "♎ Balanță", "♏ Scorpion", "♐ Săgetător", "♑ Capricorn", "♒ Vărsător", "♓ Pești"] },
 	],
   };
-
+  	
   // Function to reset the quiz and return to the menu
   const resetQuiz = () => {
     setSelectedQuiz(null); // Reset selected quiz to show the QuizMenu again
