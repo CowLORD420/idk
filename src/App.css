@@ -147,7 +147,7 @@ body, html {
 
 @media (max-width: 768px) {
   .question {
-    font-size: 3em;
+    font-size: 2.75em;
     margin: 10px 10px 20px; /* Slightly reduced spacing */
   }
 
@@ -163,7 +163,7 @@ body, html {
 
   .rezultat {
     font-size: 1.8em;
-    width: 95%;
+    width: 100%;
   }
 
   .result-image {
@@ -176,7 +176,7 @@ body, html {
   }
 
   .buttons {
-    gap: 25px; /* Tighter but comfortable spacing between buttons */
+    gap: 35px; /* Tighter but comfortable spacing between buttons */
     max-width: 100%;
   }
 }
