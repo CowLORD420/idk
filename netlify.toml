@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "/"
+  to = "https://matchasweet.shop/landing-page"
+  status = 301
+  force = true
