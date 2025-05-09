@@ -1,9 +1,9 @@
-/* Apply gradient background to the body and keep it animated */
+/* === Base Styles === */
 body, html {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Segoe UI', sans-serif;
   background: linear-gradient(270deg, #e66465, #9198e5, #7bdff2, #fcb0b3);
   background-size: 800% 800%;
   animation: gradientShift 20s ease infinite;
@@ -11,79 +11,59 @@ body, html {
 }
 
 @keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
 }
 
+/* === Container === */
 .container {
-  height: 95vh;
+  min-height: 95vh;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  padding: 20px;
+  padding: 30px 20px;
   box-sizing: border-box;
 }
 
+/* === Question === */
 .question-container {
   opacity: 0;
   transform: translateY(-30px);
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
-
 .question-container.fade-in {
   opacity: 1;
   transform: translateY(0);
 }
-
 .question-container.fade-out {
   opacity: 0;
   transform: translateY(30px);
 }
-
 .question {
-  font-family: Georgia, 'Times New Roman', Times, serif, Helvetica, sans-serif;
-  font-size: 4em;
+  font-family: 'Georgia', serif;
+  font-size: 3.5em;
   color: hsl(317, 100%, 38%);
   text-align: center;
-  margin: 30px;
+  margin: 20px;
 }
 
+/* === Buttons === */
 .buttons {
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 30px;
   width: 100%;
-  max-width: 700px;
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.fade-in {
-  opacity: 1;
-  transition: opacity 0.5s ease-in;
-}
-
-.fade-out {
-  opacity: 0;
-  transition: opacity 0.5s ease-out;
+  max-width: 600px;
 }
 
 .Button button {
   width: 100%;
-  height: 80px;
+  height: 70px;
   padding: 12px;
-  font-size: 2em;
+  font-size: 1.8em;
   cursor: pointer;
-  border-radius: 30px;
+  border-radius: 25px;
   border: 2px solid hsl(317, 100%, 38%);
   background-color: white;
   color: hsl(317, 100%, 38%);
@@ -98,120 +78,99 @@ body, html {
 }
 
 @keyframes buttonEntrance {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-/* Hover animation */
-.Button button:hover {
-  background-color: hsl(326, 79%, 77%);
-  transform: scale(1.05);
-  box-shadow: 0 0 20px hsl(317, 100%, 38%, 0.7);
-}
-
-/* Click animation */
-.Button button:active {
-  transform: scale(0.96);
-  box-shadow: 0 0 8px hsl(317, 100%, 38%, 0.4);
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
 }
 
 .Button button:hover {
   background-color: hsl(326, 79%, 77%);
-  transform: scale(1.02);
-  box-shadow: 0 0 15px hsl(317, 100%, 38%, 0.6);
+  transform: scale(1.03);
+  box-shadow: 0 0 12px hsl(317, 100%, 38%, 0.5);
 }
 
 .Button button:active {
-  transform: scale(0.98);
-  box-shadow: 0 0 5px hsl(317, 100%, 38%, 0.3);
+  transform: scale(0.97);
+  box-shadow: 0 0 6px hsl(317, 100%, 38%, 0.3);
 }
 
+/* === Result Section === */
 .result {
   text-align: center;
   color: white;
-  animation: fade-in 0.5s ease-in-out;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 50vh; /* Ensures the content stays centered vertically */
+  min-height: 50vh;
+  animation: fade-in 0.5s ease-in-out;
+}
+
+.rezultat {
+  font-size: 2.5em;
+  width: 80%;
+  color: #fff;
+  margin-bottom: 20px;
 }
 
 .result button {
   margin-top: 30px;
-  padding: 10px 20px;
-  font-size: 1.5em;
+  padding: 12px 24px;
+  font-size: 1.4em;
   border: none;
   border-radius: 20px;
   background-color: white;
   color: hsl(317, 100%, 38%);
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: background-color 0.2s, transform 0.2s;
 }
-
 .result button:hover {
   background-color: hsl(326, 79%, 77%);
 }
 
-.result-image {
-  height: 200px;       /* Set a consistent height */
-  width: auto;         /* Maintain aspect ratio */
-  border-radius: 8px;  /* Rounded corners */
-  object-fit: cover;   /* Ensures nice cropping if needed */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional styling */
-}
-
-.rezultat{
-  font-size: 3em;
-  width: 50%;
-  border: none;
-  color: hsl(0, 0%, 100%);
-  transition: background-color 0.2s;
-  margin-bottom: 10px;
-  transition: background-color 0.2s;
-}
-
+/* === Images === */
 .result-images {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px; /* Space between images */
+  gap: 15px;
   margin-top: 20px;
 }
-
-.result .question {
-  margin-bottom: 1px; /* Reduce spacing below heading */
+.result-image {
+  height: 180px;
+  width: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
+/* === Mobile Responsive Styles === */
 @media (max-width: 768px) {
   .question {
-    font-size: 2em;
-    margin: 20px;
-  }
-
-  .buttons {
-    gap: 20px;
-    max-width: 90%;
+    font-size: 2.2em;
+    margin: 15px;
   }
 
   .Button button {
-    height: 60px;
+    height: 55px;
     font-size: 1.2em;
     padding: 10px;
   }
 
   .rezultat {
-    font-size: 2em;
-    width: 90%;
+    font-size: 1.8em;
+    width: 95%;
   }
 
   .result-image {
-    height: 150px;
+    height: 130px;
+  }
+
+  .container {
+    padding: 15px;
+  }
+
+  .buttons {
+    gap: 20px;
+    max-width: 100%;
   }
 }
