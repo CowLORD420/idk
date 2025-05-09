@@ -24,7 +24,8 @@ function Quiz({ questions, quizType, onRestart }) {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showingQuestion, setShowingQuestion] = useState(true); // fade-in or fade-out
   const [showResult, setShowResult] = useState(false);
-  const [answerCounts, setAnswerCounts] = useState([0, 0, 0, 0]);
+  const [answerCounts, setAnswerCounts] = useState(new Array(questions[0].answers.length).fill(0));
+
 
   const handleButtonClick = (choiceIndex) => {
     // Start fade-out
@@ -50,7 +51,7 @@ function Quiz({ questions, quizType, onRestart }) {
 
   const resetQuiz = () => {
     setCurrentQuestion(0);
-    setAnswerCounts([0, 0, 0, 0]);
+    setAnswerCounts(new Array(questions[0].answers.length).fill(0));
     setShowResult(false);
     setShowingQuestion(true);
     onRestart();
