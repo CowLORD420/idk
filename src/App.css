@@ -144,20 +144,21 @@ body, html {
 }
 
 /* === Mobile Responsive Styles === */
+
 @media (max-width: 768px) {
   .question {
     font-size: 2.2em;
-    margin: 5px 10px 10px; /* Reduced spacing */
+    margin: 10px 10px 20px; /* Slightly reduced spacing */
   }
 
   .question-container {
-    margin-bottom: 10px; /* Reduce space between question and answers */
+    margin-bottom: 20px; /* Moderate gap between question and buttons */
   }
 
   .Button button {
-    height: 50px;
-    font-size: 1.1em;
-    padding: 8px;
+    height: 58px;
+    font-size: 1.25em;
+    padding: 10px;
   }
 
   .rezultat {
@@ -170,12 +171,13 @@ body, html {
   }
 
   .container {
-    padding: 10px;
-    justify-content: flex-start; /* Push content closer to top */
+    padding: 15px;
+    justify-content: flex-start;
   }
 
   .buttons {
-    gap: 15px;
+    gap: 20px; /* Tighter but comfortable spacing between buttons */
     max-width: 100%;
   }
 }
+
