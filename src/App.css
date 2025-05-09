@@ -147,8 +147,8 @@ body, html {
 
 @media (max-width: 768px) {
   .question {
-    font-size: 2.8em;
-    margin: 5px 5px 50px; /* Slightly reduced spacing */
+    font-size: 3em;
+    margin: 5px 10px 50px; /* Slightly reduced spacing */
   }
 
   .question-container {
