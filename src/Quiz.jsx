@@ -1,5 +1,4 @@
 import { useState } from "react";
-import React, { useEffect } from "react";
 
 import Buttons from "./Buttons";
 import TortCiocoZmeura from './assets/Tort Ciocolata Amara si Zmeura.jpg';
@@ -31,15 +30,6 @@ function Quiz({ questions, quizType, onRestart }) {
   const handleButtonClick = (choiceIndex) => {
     // Start fade-out
     setShowingQuestion(false);
-
-    function App() {
-      useEffect(() => {
-        // Set a timeout to refresh the page after 1 second
-          setTimeout(function() {
-            window.location.reload();
-        }, 1000); // Refresh after 1 second
-      }, []);
-     } // Empty dependency array means this runs once, after the first render
 
     setTimeout(() => {
       // Update answer counts
@@ -203,8 +193,6 @@ function Quiz({ questions, quizType, onRestart }) {
       </div>
     </>
   );
-  
-  
 }
 
 export default Quiz;
