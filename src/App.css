@@ -152,15 +152,15 @@ body, html {
 /* === Mobile Responsive Styles === */
 
 @media (max-width: 768px) {
-   body, html {
+   html, body {
     background: linear-gradient(270deg, #e66465, #9198e5);
     background-size: cover;
-    animation: none;
-    background-attachment: scroll;
+    animation: none !important;
+    background-attachment: scroll !important;
   }
 
   body {
-    background-color: #f8f8f8;
+    background-color: #bb1a1a;
   }
 
   .question {
