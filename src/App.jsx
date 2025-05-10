@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useEffect } from "react";
 import Quiz from "./Quiz";
 import QuizMenu from "./QuizMenu";
 import "./App.css";
@@ -43,13 +42,6 @@ function App() {
     setSelectedQuiz(null); // Reset selected quiz to show the QuizMenu again
     setQuizType(""); // Reset the quiz type
   };
-
-  useEffect(() => {
-  setTimeout(() => {
-    window.scrollTo(0, 1); // Triggers a repaint on some mobile browsers
-    window.scrollTo(0, 0);
-  }, 100);
-}, []);
 
   return (
     <div className="container">
