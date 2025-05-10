@@ -1,4 +1,6 @@
 import { useState } from "react";
+import React, { useEffect } from "react";
+
 import Buttons from "./Buttons";
 import TortCiocoZmeura from './assets/Tort Ciocolata Amara si Zmeura.jpg';
 import TortCireseVanilie from './assets/Tort Iaurt cu Cirese si Vanilie.jpg';
@@ -23,13 +25,21 @@ import TortFructe from './assets/Tort Fructat cu Vanilie.jpg';
 function Quiz({ questions, quizType, onRestart }) {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showingQuestion, setShowingQuestion] = useState(true); // fade-in or fade-out
-  const [showResult, setShowResult] = useState(false);
+  const [showResult, setShowResult] = useState(false);  
   const [answerCounts, setAnswerCounts] = useState(new Array(questions[0].answers.length).fill(0));
-
 
   const handleButtonClick = (choiceIndex) => {
     // Start fade-out
     setShowingQuestion(false);
+
+    function App() {
+      useEffect(() => {
+        // Set a timeout to refresh the page after 1 second
+          setTimeout(function() {
+            window.location.reload();
+        }, 1000); // Refresh after 1 second
+      }, []);
+     } // Empty dependency array means this runs once, after the first render
 
     setTimeout(() => {
       // Update answer counts
@@ -193,6 +203,8 @@ function Quiz({ questions, quizType, onRestart }) {
       </div>
     </>
   );
+  
+  
 }
 
 export default Quiz;
