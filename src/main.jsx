@@ -1,12 +1,13 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import App from './App.jsx'
+import React from 'react';
+import { createRoot } from 'react-dom/client';
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-)
+const root = document.getElementById('root');
+
+createRoot(root).render(
+  <div style={{ backgroundColor: 'red', height: '100vh', color: 'white', fontSize: '2rem', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+    Hello Mobile
+  </div>
+);
 
 setTimeout(() => {
   const root = document.getElementById("root");
