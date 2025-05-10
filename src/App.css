@@ -149,6 +149,9 @@ body, html {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
+* {
+  outline: 1px solid red; /* see what disappears */
+}
 /* === Mobile Responsive Styles === */
 
 @media (max-width: 768px) {
