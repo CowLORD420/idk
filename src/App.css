@@ -4,10 +4,19 @@ body, html {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(270deg, #e66465, #9198e5, #7bdff2, #fcb0b3);
-  background-size: 800% 800%;
-  animation: gradientShift 20s ease infinite;
-  background-attachment: fixed;
+  background: linear-gradient(to right, #e66465, #9198e5); /* Simpler default for mobile */
+  background-size: cover;
+  background-attachment: scroll;
+  background-color: #e66465;
+}
+
+@media (min-width: 769px) {
+  body, html {
+    background: linear-gradient(270deg, #e66465, #9198e5, #7bdff2, #fcb0b3);
+    background-size: 800% 800%;
+    animation: gradientShift 20s ease infinite;
+    background-attachment: fixed;
+  }
 }
 
 @keyframes gradientShift {
@@ -152,24 +161,13 @@ body, html {
 /* === Mobile Responsive Styles === */
 
 @media (max-width: 768px) {
-   html, body {
-    background: linear-gradient(270deg, #e66465, #9198e5);
-    background-size: cover;
-    animation: none !important;
-    background-attachment: scroll !important;
-  }
-
-  body {
-    background-color: #bb1a1a;
-  }
-
   .question {
     font-size: 2.9em;
-    margin: 5px 10px 50px; /* Slightly reduced spacing */
+    margin: 5px 10px 50px;
   }
 
   .question-container {
-    margin-bottom: 40px; /* Moderate gap between question and buttons */
+    margin-bottom: 40px;
   }
 
   .Button button {
@@ -193,8 +191,7 @@ body, html {
   }
 
   .buttons {
-    gap: 35px; /* Tighter but comfortable spacing between buttons */
+    gap: 35px;
     max-width: 100%;
   }
 }
-
