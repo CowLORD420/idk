@@ -3,17 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quiz App</title>
+    <title>Your App</title>
+
+    <script>
+      if (!sessionStorage.getItem("refreshed")) {
+        sessionStorage.setItem("refreshed", "true");
+        window.location.reload();
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
-
-    <script>
-      window.onload = function () {
-        setTimeout(function () {
-          window.location.reload();
-        }, 2000); // Refresh after 1 second
-      };
-    </script>
   </body>
 </html>
