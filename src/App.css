@@ -291,6 +291,7 @@ body, html {
 .Button button:active {
   outline: none;
   transform: scale(0.98); /* optional: subtle press effect */
-  box-shadow: 0 2px 8px rgba(255, 144, 187, 0.2); /* lighter shadow on press */
+  box-shadow: 0 2px 8px rgba(255, 144, 187, 0.2);
+  background-color: white; /* lighter shadow on press */
 }
 }
