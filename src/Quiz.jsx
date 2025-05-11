@@ -203,7 +203,7 @@ function Quiz({ questions, quizType, onRestart }) {
             rel="noopener noreferrer"
             className="glovo-button"
           >
-            Comandă acum prin Glovo
+            Comandă acum prin Glovo!
           </a>
         </div>
       </div>
