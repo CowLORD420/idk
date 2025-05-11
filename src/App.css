@@ -295,23 +295,9 @@ body, html {
   height: 4.5rem;
   padding: 12px;
   font-size: 1.7rem;
-  cursor: pointer;
   border-radius: 25px;
   border: 2px solid var(--pink);
   background-color: var(--bg-white);
   color: var(--light-pink);
-  transition: 
-    background-color 0.3s ease,
-    transform 0.2s ease,
-    box-shadow 0.3s ease,
-    color 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  white-space: normal;
-  overflow: hidden;
-  animation: buttonEntrance 0.6s ease;
-  box-shadow: 0 4px 12px rgba(255, 144, 187, 0.15); /* or a mobile-specific style */
 }
 }
