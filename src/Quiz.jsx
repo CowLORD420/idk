@@ -188,7 +188,24 @@ function Quiz({ questions, quizType, onRestart }) {
             <img src={resultImage} alt="Quiz Result" className="result-image" />
           )}
         </div>
-        <button onClick={resetQuiz}>Reia quiz-ul sau alege altu!</button>
+        <div className="actions" style={{ marginTop: '2rem' }}>
+          <a
+            href="#"
+            className="button"
+            onClick={resetQuiz}
+          >
+            Reia quiz-ul!
+          </a>
+          <span className="sau-text">Sau</span>
+          <a
+            href="https://glovoapp.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="glovo-button"
+          >
+            Comandă acum prin Glovo
+          </a>
+        </div>
       </div>
     );
   }
