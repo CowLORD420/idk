@@ -289,15 +289,8 @@ body, html {
 
 .Button button:focus,
 .Button button:active {
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 700;
-  width: 100%;
-  height: 4.5rem;
-  padding: 12px;
-  font-size: 1.7rem;
-  border-radius: 25px;
-  border: 2px solid var(--pink);
-  background-color: var(--bg-white);
-  color: var(--light-pink);
+  outline: none;
+  transform: scale(0.98); /* optional: subtle press effect */
+  box-shadow: 0 2px 8px rgba(255, 144, 187, 0.2); /* lighter shadow on press */
 }
 }
