@@ -286,4 +286,10 @@ body, html {
     gap: 35px;
     max-width: 100%;
   }
+
+.Button button:focus,
+.Button button:active {
+  outline: none;
+  background-color: initial; /* or a mobile-specific style */
+}
 }
