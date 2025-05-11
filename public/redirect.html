@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Redirecting...</title>
+    <script>
+      // Open quiz site in new tab
+      window.onload = function () {
+        const quizUrl = "https://quiz.matchasweet.shop"; // Replace with your actual quiz URL
+        window.open(quizUrl, "_blank");
+        window.location.href = quizUrl; // As fallback, load it in same tab
+      };
+    </script>
+    <noscript>
+      <meta http-equiv="refresh" content="0; url=https://quiz.matchasweet.shop" />
+    </noscript>
+    <style>
+      body {
+        font-family: sans-serif;
+        text-align: center;
+        padding: 2rem;
+        background-color: #fef3f3;
+      }
+    </style>
+  </head>
+  <body>
+    Te redirectionam catre quiz.
+    <br /><br />
+    Daca nu se intampla nimic, <a href="https://quiz.matchasweet.shop" target="_blank">apasa aici</a>.
+  </body>
+</html>
