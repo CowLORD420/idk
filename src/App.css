@@ -161,8 +161,10 @@ body, html {
   margin-bottom: 20px;
 }
 
-.rezultat:hover {
+@media (hover: hover) and (pointer: fine) {
+  .rezultat:hover {
   text-shadow: 0 0 10px var(--light-pink);
+}
 }
 
 .result button {
@@ -223,11 +225,13 @@ body, html {
   margin: 0.75rem;
 }
 
-.button:hover, .glovo-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 16px rgba(232, 73, 166, 0.15);
-  background: linear-gradient(135deg, #a6c1ee, #fbc2eb);
-  color: var(--pink);  /* Dark text for contrast */
+@media (hover: hover) and (pointer: fine) {
+  .button:hover, .glovo-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(232, 73, 166, 0.15);
+    background: linear-gradient(135deg, #a6c1ee, #fbc2eb);
+    color: var(--pink);  /* Dark text for contrast */
+  }
 }
 
 .sau-text {
