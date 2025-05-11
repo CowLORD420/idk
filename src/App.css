@@ -292,6 +292,7 @@ body, html {
   outline: none;
   transform: scale(0.98); /* optional: subtle press effect */
   box-shadow: 0 2px 8px rgba(255, 144, 187, 0.2);
-  background-color: white; /* lighter shadow on press */
+  background-color: white;
+  color: var(--pink); /* lighter shadow on press */
 }
 }
