@@ -120,11 +120,6 @@ body, html {
               0 0 20px rgba(255, 83, 179, 0.7);
 }
 
-.Button button:focus {
-  outline: 2px solid var(--pink);
-  outline-offset: 2px;
-}
-
 .Button button:active {
   transform: scale(0.96);
   box-shadow: 0 0 8px rgba(255, 255, 255, 0.4),
