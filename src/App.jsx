@@ -23,7 +23,7 @@ function App() {
 		{ question: "Ce tip de restricție alimentară ai?", answers: ["Diabet", "Intoleranță la lactoză", "Evit glutenul", "Stil de viață sănătos, fără restricții stricte"] },
 		{ question: "Ce îți dorești de la un desert?", answers: ["Să fie cât mai natural, fără îndulcitori artificiali", "Să aibă gust autentic, chiar dacă e light", "Să aibă ingrediente simple, ușor de înțeles", "Să fie echilibrat – nici prea dulce, nici prea sec"] },
 		{ question: "Cât de des consumi deserturi?", answers: ["Zilnic – dar în cantități mici", "Doar ocazional, la evenimente", "Când simt că am nevoie de energie", "Le evit de obicei, dar uneori mă răsfăț"] },
-		{ question: "Ce ingrediente ești obișnuit(ă) să eviți sau reduci?", answers: ["Zahăr procesat", "Lactate clasice", "Făină albă", "Nu evit nimic în mod special, dar apreciez alternativele mai sănătoase"] },
+		{ question: "Ce ingrediente ești obișnuit(ă) să eviți sau reduci?", answers: ["Zahăr procesat", "Lactate clasice", "Făină albă", "Nu evit nimic în mod special"] },
 		{ question: "Ce rol vrei să aibă desertul în ziua ta?", answers: ["Un răsfăț rapid, dar atent la ingrediente", "Un desert de ocazie, care să impresioneze", "O gustare care să-mi dea energie și să mă țină sătul(ă)", "O alternativă sănătoasă la pofta de dulce"] },
 	  ],
 	Sarbatori: [
