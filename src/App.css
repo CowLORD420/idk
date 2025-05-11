@@ -1,10 +1,17 @@
+/* === Root Variables === */
+:root {
+  --pink: #ff5998;
+  --light-pink: #ff83b3;
+  --bg-white: #ffffffee;
+}
+
 /* === Base Styles === */
 body, html {
   height: 100%;
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(270deg, #e66465, #9198e5, #7bdff2, #fcb0b3);
+  background: linear-gradient(270deg, #6499E9, #9EDDFF, #A6F6FF, #BEFFF7);
   background-size: 800% 800%;
   animation: gradientShift 20s ease infinite;
   background-attachment: fixed;
@@ -13,6 +20,14 @@ body, html {
 @keyframes gradientShift {
   0%, 100% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
 }
 
 /* === Container === */
@@ -47,9 +62,10 @@ body, html {
 }
 
 .question {
-  font-family: 'Georgia', serif;
-  font-size: 3.5em;
-  color: hsl(317, 100%, 38%);
+  font-family: 'Dancing Script', cursive;
+  font-weight: 650;
+  font-size: 4em;
+  color: var(--pink);
   text-align: center;
   margin: 20px;
 }
@@ -64,16 +80,22 @@ body, html {
 }
 
 .Button button {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
   width: 100%;
-  height: 70px;
+  height: 4.5rem;
   padding: 12px;
-  font-size: 1.8em;
+  font-size: 1.7rem;
   cursor: pointer;
   border-radius: 25px;
-  border: 2px solid hsl(317, 100%, 38%);
-  background-color: white;
-  color: hsl(317, 100%, 38%);
-  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  border: 2px solid var(--pink);
+  background-color: var(--bg-white);
+  color: var(--light-pink);
+  transition: 
+    background-color 0.3s ease,
+    transform 0.2s ease,
+    box-shadow 0.3s ease,
+    color 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -81,6 +103,7 @@ body, html {
   white-space: normal;
   overflow: hidden;
   animation: buttonEntrance 0.6s ease;
+  box-shadow: 0 4px 12px rgba(255, 144, 187, 0.15);
 }
 
 @keyframes buttonEntrance {
@@ -89,14 +112,23 @@ body, html {
 }
 
 .Button button:hover {
-  background-color: hsl(326, 79%, 77%);
-  transform: scale(1.03);
-  box-shadow: 0 0 12px hsl(317, 100%, 38%, 0.5);
+  background-color: var(--light-pink);
+  color: white;
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.6),
+              0 0 12px rgba(255, 144, 187, 0.4),
+              0 0 20px rgba(255, 83, 179, 0.7);
+}
+
+.Button button:focus {
+  outline: 2px solid var(--pink);
+  outline-offset: 2px;
 }
 
 .Button button:active {
-  transform: scale(0.97);
-  box-shadow: 0 0 6px hsl(317, 100%, 38%, 0.3);
+  transform: scale(0.96);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.4),
+              0 0 5px rgba(255, 144, 187, 0.3);
 }
 
 /* === Result Section === */
@@ -111,11 +143,27 @@ body, html {
   animation: fade-in 0.5s ease-in-out;
 }
 
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-out {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
 .rezultat {
   font-size: 2.5em;
   width: 80%;
-  color: #fff;
+  color: var(--pink);
   margin-bottom: 20px;
+}
+
+.rezultat:hover {
+  text-shadow: 0 0 10px var(--light-pink);
 }
 
 .result button {
@@ -125,12 +173,18 @@ body, html {
   border: none;
   border-radius: 20px;
   background-color: white;
-  color: hsl(317, 100%, 38%);
+  color: var(--light-pink);
   cursor: pointer;
   transition: background-color 0.2s, transform 0.2s;
 }
+
 .result button:hover {
-  background-color: hsl(326, 79%, 77%);
+  background-color: var(--light-pink);
+  color: white;
+}
+
+.result button:active {
+  transform: scale(0.95);
 }
 
 /* === Images === */
@@ -141,29 +195,38 @@ body, html {
   gap: 15px;
   margin-top: 20px;
 }
+
 .result-image {
   height: 180px;
   width: auto;
   border-radius: 10px;
   object-fit: cover;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.result-image:hover {
+  transform: scale(1.05);
 }
 
 /* === Mobile Responsive Styles === */
-
 @media (max-width: 768px) {
+  body, html {
+    animation: none;
+  }
+
   .question {
     font-size: 2.9em;
-    margin: 5px 10px 50px; /* Slightly reduced spacing */
+    margin: 5px 10px 50px;
   }
 
   .question-container {
-    margin-bottom: 40px; /* Moderate gap between question and buttons */
+    margin-bottom: 40px;
   }
 
   .Button button {
-    height: 58px;
-    font-size: 1.25em;
+    height: 3.6rem;
+    font-size: 1.25rem;
     padding: 10px;
   }
 
@@ -182,8 +245,7 @@ body, html {
   }
 
   .buttons {
-    gap: 35px; /* Tighter but comfortable spacing between buttons */
+    gap: 35px;
     max-width: 100%;
   }
 }
-

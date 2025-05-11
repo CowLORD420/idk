@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useRef, useEffect} from "react";
 
 import Buttons from "./Buttons";
 import TortCiocoZmeura from './assets/Tort Ciocolata Amara si Zmeura.jpg';
@@ -26,6 +27,17 @@ function Quiz({ questions, quizType, onRestart }) {
   const [showingQuestion, setShowingQuestion] = useState(true); // fade-in or fade-out
   const [showResult, setShowResult] = useState(false);  
   const [answerCounts, setAnswerCounts] = useState(new Array(questions[0].answers.length).fill(0));
+
+  const buttonsRef = useRef(null);
+
+  // Trigger fade-in animation on new question
+  useEffect(() => {
+    if (buttonsRef.current) {
+      buttonsRef.current.classList.remove("fade-in");
+      void buttonsRef.current.offsetWidth; // force reflow
+      buttonsRef.current.classList.add("fade-in");
+    }
+  }, [currentQuestion]);
 
   const handleButtonClick = (choiceIndex) => {
     // Start fade-out
@@ -186,7 +198,10 @@ function Quiz({ questions, quizType, onRestart }) {
       <div className={`question-container ${showingQuestion ? "fade-in" : "fade-out"}`}>
         <h1 className="question">{questions[currentQuestion].question}</h1>
       </div>
-      <div className={`buttons ${showingQuestion ? "fade-in" : "fade-out"}`} key={currentQuestion}>
+      <div
+      ref={buttonsRef}
+      className={`buttons ${showingQuestion ? "fade-in" : "fade-out"}`}
+    >
         {questions[currentQuestion].answers.map((answer, index) => (
           <Buttons key={index} choice={answer} onClick={() => handleButtonClick(index)} />
         ))}
